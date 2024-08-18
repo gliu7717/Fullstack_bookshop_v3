@@ -9,8 +9,9 @@ import { useParams } from 'react-router-dom';
 import Paginate from '../components/Paginate';
 
 const BookListScreen = () => {
-
-  const { pageNumber } = useParams();
+  const { pageNum } = useParams();
+  console.log(pageNum);
+  const pageNumber = pageNum?pageNum:1
 
   const { data, isLoading, error, refetch } = useGetBooksQuery({
     pageNumber,
